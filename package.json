@@ -1,6 +1,6 @@
 {
   "name": "lit-vercel-image",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vercel Image Optimization for Lit",
   "main": "index.mjs",
   "repository": {
