@@ -1,4 +1,5 @@
-import {css, isServer, LitElement} from "lit";
+import {css, LitElement} from "lit";
+import {VercelImageGenerator} from "./generator.mjs";
 import {html, unsafeStatic} from "lit/static-html.js";
 import {ifDefined} from "lit/directives/if-defined.js";
 
@@ -23,30 +24,13 @@ export class LitVercelImage extends LitElement {
         this.cdn = this.host = this.local;
     }
 
-    get local() {
-        return isServer ? process?.env?.VERCEL_URL : location?.host;
+    get url() {
+        return this.generator.generate(this);
     }
 
-    get url() {
-        const {
-            src,
-            width,
-            local,
-            host = local,
-            quality = 100,
-            cdn = host
-        } = this;
-        if (
-            local === "localhost" ||
-            ![src, cdn, host, width, quality].every(Boolean)
-        ) return src;
-        const srcURL = new URL(src, `https://${host}/`);
-        const cdnURL = new URL(`https://${cdn}/_vercel/image`);
-        const url = srcURL.host === cdn ? srcURL.pathname : srcURL.href;
-        cdnURL.searchParams.set("q", String(quality));
-        cdnURL.searchParams.set("w", String(width));
-        cdnURL.searchParams.set("url", url);
-        return cdnURL.href;
+    connectedCallback() {
+        super.connectedCallback();
+        this.generator = new VercelImageGenerator(this);
     }
 
     static define(tag = "lit-vercel-image") {

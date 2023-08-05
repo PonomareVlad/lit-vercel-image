@@ -27,8 +27,20 @@
   "devDependencies": {
     "@web-types/lit": "^2.0.0-3"
   },
+  "exports": {
+    ".": {
+      "default": "./index.mjs"
+    },
+    "./define": {
+      "default": "./define.mjs"
+    },
+    "./generator": {
+      "default": "./generator.mjs"
+    }
+  },
   "files": [
     "LICENSE",
+    "generator.*",
     "define.*",
     "index.*",
     "*.json",
