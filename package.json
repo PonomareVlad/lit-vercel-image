@@ -1,0 +1,37 @@
+{
+  "name": "lit-vercel-image",
+  "version": "0.0.0",
+  "description": "Vercel Image Optimization for Lit",
+  "main": "index.mjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PonomareVlad/lit-vercel-image.git"
+  },
+  "keywords": [
+    "lit",
+    "img",
+    "image",
+    "vercel",
+    "optimization"
+  ],
+  "author": "Vladislav Ponomarev <PonomareVlad@users.noreply.github.com> (https://PonomareVlad.ru)",
+  "funding": "https://PonomareVlad.ru/donate",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PonomareVlad/lit-vercel-image/issues"
+  },
+  "homepage": "https://github.com/PonomareVlad/lit-vercel-image#readme",
+  "peerDependencies": {
+    "lit": "^2.8.0"
+  },
+  "devDependencies": {
+    "@web-types/lit": "^2.0.0-3"
+  },
+  "files": [
+    "LICENSE",
+    "define.*",
+    "index.*",
+    "*.json",
+    "*.md"
+  ]
+}
