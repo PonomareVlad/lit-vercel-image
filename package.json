@@ -31,10 +31,10 @@
     ".": {
       "default": "./index.mjs"
     },
-    "./define": {
+    "./define.mjs": {
       "default": "./define.mjs"
     },
-    "./generator": {
+    "./generator.mjs": {
       "default": "./generator.mjs"
     }
   },
